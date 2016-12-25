@@ -15,14 +15,10 @@ def remover_acentos(input_str):
 File = open('CID10/CID-10-CATEGORIAS.CSV')
 Reader = csv.reader(File)
 
-isfile = False
-if os.path.isfile('csv/source.csv'):
-    isfile = True
-
-outputFile = open('csv/source.csv', 'w')
+outputFile = open('csv/source.csv', 'a')
 outputWriter = csv.writer(outputFile)
 
-if not isfile:
+if not os.path.isfile('csv/source.csv'):
     outputWriter.writerow(['PALAVRA'])
 
 start = input("Começa em que linha ?")
